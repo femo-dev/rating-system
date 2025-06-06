@@ -1,13 +1,12 @@
 import { FaStar } from "react-icons/fa";
 
-export default function Star(props) {
+export default function Star({ id, on, handleRating }) {
     return (
         <FaStar
-            key={props.id}
-            color={props.on ? 'gold' : 'gray'}
+            color={on ? "gold" : "gray"}
             size={84}
-            onClick={() => props.handleRating(props.id, props.on)}
-            style={{ cursor: 'pointer' }}
-        /> 
-    )
+            onClick={() => handleRating(id)}
+            style={{ cursor: "pointer", transition: "color 0.3s" }}
+        />
+    );
 }

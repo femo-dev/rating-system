@@ -2,32 +2,29 @@ import { useState } from "react";
 import Star from "./Star";
 
 export default function StarRating() {
-    const initialStars = [
-        { id: 0, on: false },
-        { id: 1, on: false },
-        { id: 2, on: false },
-        { id: 3, on: false },
-        { id: 4, on: false }
-    ];
+    const [rating, setRating] = useState(0);
+    const ratingsIds = [0, 1, 2, 3, 4];
+    const ratingTexts = ["Poor", "Low", "Good", "Very good", "Excellent"];
 
-    const [stars, setStars] = useState(initialStars);
-    const handleRating = (id, on) => {
-        const updatedStars = stars.map(star =>
-            star.id === id ? { ...star, on: !on } : star
-        );
-        
-        setStars(updatedStars);
+    const handleRating = (id) => {
+        setRating(id + 1);
     };
 
     return (
-        <div>
-            {stars.map(star => (
-                <Star 
-                    id={star.id}
-                    on={star.on}
-                    handleRating={handleRating}
-                />
-            ))}        
-        </div>             
+        <div className="rating-container">
+            <div className="stars">
+                {
+                    ratingsIds.map((id) => (
+                        <Star
+                            key={id}
+                            id={id}
+                            on={id < rating}
+                            handleRating={handleRating}
+                        />
+                    ))
+                }
+            </div>
+            {rating > 0 && <h2 className="rating-text">{ratingTexts[rating - 1]}</h2>}
+        </div>
     );
 }
