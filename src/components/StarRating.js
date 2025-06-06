@@ -24,7 +24,15 @@ export default function StarRating() {
                     ))
                 }
             </div>
-            {rating > 0 && <h2 className="rating-text">{ratingTexts[rating - 1]}</h2>}
+
+            <h2 
+                className="rating-text" 
+                style={{ opacity: rating > 0 ? 1 : 0 }}
+            >
+                {
+                    rating > 0 ? ratingTexts[rating - 1] : " "
+                }
+            </h2>
         </div>
     );
 }
