@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Getting Started with Rating-System
+![alt text](./public/images/rating.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple and elegant React application that allows users to rate something using a 5-star rating system.
+
+The project features:
+
+- A dynamic star rating component using react-icons (FontAwesome's FaStar).
+
+- Visual feedback with a color transition when selecting stars.
+
+- Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

@@ -5,7 +5,7 @@ export default function Star({ id, on, handleRating }) {
         <FaStar
             color={on ? "gold" : "gray"}
             size={84}
-            onClick={() => handleRating(id)}
+            onClick={() => handleRating(id, on)}
             style={{ cursor: "pointer", transition: "color 0.3s" }}
         />
     );
